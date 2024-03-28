@@ -50,7 +50,7 @@ export async function uploadOffChainMetadata(inputs: UploadOffChainMetadataInput
     description: tokenDescription,
     external_url: tokenExternalUrl,
     image: formatIPFSUrl(imageUrl),
-    attributes: Object.entries(tokenAdditionalMetadata).map(([trait_type, value]) => ({ trait_type, value })),
+    attributes: Object.entries(tokenAdditionalMetadata || []).map(([trait_type, value]) => ({ trait_type, value })),
   }
 
   const metadataBlob = new Blob([JSON.stringify(metadata)], { type: 'application/json' })
