@@ -1,13 +1,11 @@
-import { clusterApiUrl, Connection } from '@solana/web3.js';
+import { Connection } from '@solana/web3.js';
 import { initializeKeypair } from '@solana-developers/helpers';
 
-async function main() {
-  const connection = new Connection(clusterApiUrl('devnet'), 'finalized');
+(async () => {
+  const connection = new Connection('http://127.0.0.1:8899', 'finalized');
   const payer = await initializeKeypair(connection);
 
-}
-
-main()
+})()
   .then(() => {
     console.log('Finished successfully');
     process.exit(0);
