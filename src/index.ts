@@ -3,7 +3,7 @@ import { initializeKeypair } from '@solana-developers/helpers';
 
 (async () => {
   const connection = new Connection(clusterApiUrl('devnet'), 'finalized');
-  const payer = await initializeKeypair(connection);
+  const payer = await initializeKeypair(connection, {keypairPath: 'your/path/to/keypair.json'});
 
 })()
   .then(() => {
