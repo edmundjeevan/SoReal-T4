@@ -1,4 +1,4 @@
-import {Connection, Keypair} from '@solana/web3.js'
+import {clusterApiUrl, Connection, Keypair} from '@solana/web3.js'
 import Irys from '@irys/sdk'
 import fs from 'fs'
 import path from 'path'
@@ -34,7 +34,7 @@ const getIrysArweave = async (secretKey: Uint8Array) => {
 		token: 'solana',
 		key: secretKey,
 		config: {
-			providerUrl: 'https://api.devnet.solana.com',
+			providerUrl: clusterApiUrl('devnet'),
 		},
 	})
 	return irys
@@ -56,9 +56,7 @@ export async function uploadOffChainMetadata(
 
 	const irys = await getIrysArweave(payer.secretKey)
 
-	const imageUploadReceipt = await irys.uploadFile(
-		path.join(__dirname, `/assets/${imagePath}`)
-	)
+	const imageUploadReceipt = await irys.uploadFile(imagePath)
 
 	const metadata = {
 		name: tokenName,
@@ -71,7 +69,7 @@ export async function uploadOffChainMetadata(
 		),
 	}
 
-	const metadataFile = path.join(__dirname, `/assets/${metadataFileName}`)
+	const metadataFile = path.join(__dirname, `${metadataFileName}`)
 
 	fs.writeFileSync(metadataFile, JSON.stringify(metadata, null, 4), {
 		flag: 'w',
