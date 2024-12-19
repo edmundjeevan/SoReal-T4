@@ -1,5 +1,7 @@
-The metadata pointer extension associates a token mint directly to a metadata account. This happens by storing the metadata account's address in the mint. This metadata account address can be an external metadata account, like Metaplex, or can be the mint itself if using the metadata extension.
-The metadata mint extension allows embedding of metadata directly into mint accounts through the Token Extensions Program. This is always accompanied with a self-referencing metadata pointer. This facilitates embedding comprehensive token information at the minting stage.
+The metadata pointer extension associates a token mint directly to a metadata account by storing the metadata account's address in the mint. 
+This metadata account address can be an external metadata account, like Metaplex, or the mint itself if using the metadata extension.
+The metadata mint extension allows embedding metadata directly into mint accounts through the Token Extensions Program. 
+This is always accompanied by a self-referencing metadata pointer, which facilitates embedding comprehensive token information at the minting stage.
 These extensions enhance the interoperability of tokens across different applications and platforms by standardizing how metadata is associated and accessed.
 Directly embedding or pointing to metadata can streamline transactions and interactions by reducing the need for additional lookups or external calls. To Get Started
 
