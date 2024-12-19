@@ -4,6 +4,8 @@ The metadata mint extension allows embedding metadata directly into mint account
 This is always accompanied by a self-referencing metadata pointer, which facilitates embedding comprehensive token information at the minting stage.
 These extensions enhance the interoperability of tokens across different applications and platforms by standardizing how metadata is associated and accessed.
 Directly embedding or pointing to metadata can streamline transactions and interactions by reducing the need for additional lookups or external calls. 
+Mint Accounts are responsible for storing the global information of a Token and Token Accounts store the relationship between a wallet and a Mint Account.
+
 
 To create a Solana token with embedded metadata that includes proof of location, you can utilize the Token Metadata program provided by Metaplex. This program allows you to associate detailed metadata with your token mint account, enhancing its utility and interoperability within the Solana ecosystem.
 
